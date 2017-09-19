@@ -183,11 +183,12 @@ namespace _2__Simple_Iteration_and_Seidel_SLE
 				curX[i] = vectorD[i];
 			}
 			richTextBox1.Text += String.Format("\nПочаткове наближення x0=d:\n{0}", printVec(curX));
+			double[] nextX = new double[size];
+			double[] subXNextXCur = new double[size];
+			uint count = 0;
+			double normaNextXCurX = 0;
 			if (methodType == 0)
 			{
-				double[] nextX = new double[size];
-				uint count = 0;
-				double normaNextXCurX = 0;
 				do
 				{
 					double[] CmultCurX = multiplyMatrixAndVec(matrixC, curX);
@@ -196,7 +197,6 @@ namespace _2__Simple_Iteration_and_Seidel_SLE
 						nextX[i] = vectorD[i] + CmultCurX[i];
 					}
 					richTextBox1.Text += String.Format("\nНаближення №{0} x{0}=d+C*x{1}:\n{2}", count + 1, count++, printVec(nextX));
-					double[] subXNextXCur = new double[size];
 					for (int i = 0; i < size; ++i)
 					{
 						subXNextXCur[i] = nextX[i] - curX[i];
@@ -210,10 +210,6 @@ namespace _2__Simple_Iteration_and_Seidel_SLE
 			}
 			else if (methodType == 1)
 			{
-				double[] nextX = new double[size];
-				double[] subXNextXCur = new double[size];
-				uint count = 0;
-				double normaNextXCurX = 0;
 				do
 				{
 					for (int i = 0; i < size; ++i)
