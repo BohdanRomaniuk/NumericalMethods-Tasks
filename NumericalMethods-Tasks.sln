@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumericalMethods-Tasks", "NumericalMethods-Tasks\NumericalMethods-Tasks.csproj", "{DF17DC66-B0BD-4E28-B53C-E8A1B8BC3B8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1) Simple Iteration", "NumericalMethods-Tasks\1) Simple Iteration.csproj", "{DF17DC66-B0BD-4E28-B53C-E8A1B8BC3B8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2) Simple Iteration and Seidel SLE", "2) Simple Iteration and Seidel SLE\2) Simple Iteration and Seidel SLE.csproj", "{B40B70C2-2FAB-4503-8E44-32621E7E2784}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DF17DC66-B0BD-4E28-B53C-E8A1B8BC3B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF17DC66-B0BD-4E28-B53C-E8A1B8BC3B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF17DC66-B0BD-4E28-B53C-E8A1B8BC3B8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40B70C2-2FAB-4503-8E44-32621E7E2784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40B70C2-2FAB-4503-8E44-32621E7E2784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40B70C2-2FAB-4503-8E44-32621E7E2784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40B70C2-2FAB-4503-8E44-32621E7E2784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
