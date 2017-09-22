@@ -6,31 +6,53 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using NCalc;
 
 namespace NumericalMethods_Tasks
 {
 	public partial class Form1 : Form
 	{
+		private string phi = "5 / 6 * Sin([X])";
+		private string phiShtrih = "5 / 6 * Cos([X])";
+		private Expression phiExpression;
+		private Expression phiShtrihExpression;
 		public Form1()
 		{
 			InitializeComponent();
-			textBox1.Text = "(5/6)*sin(x)";
-			textBox2.Text = "(5/6)*cos(x)";
+			phiExpression = new Expression(phi);
+			phiShtrihExpression = new Expression(phiShtrih);
+			textBox1.Text = phi;
+			textBox2.Text = phiShtrih;
 			textBox3.Text = "1";
 			textBox4.Text = "0,00001";
 		}
 		private double functionPhiFromX(double x)
 		{
-			return (double)5 / 6 * Math.Cos(x);
+			phiExpression.Parameters["X"] = x;
+			return (double)phiExpression.Evaluate();
+		}
+		private double functionPhiShtrihFromX(double x)
+		{
+			phiShtrihExpression.Parameters["X"] = x;
+			return (double)phiShtrihExpression.Evaluate();
+		}
+		/*
+		private double functionPhiFromX(double x)
+		{
+			return (double)5 / 6 * Math.Sin(x);
 		}
 		private double functionPhiShtrihFromX(double x)
 		{
 			return (double)5 / 6 * Math.Cos(x);
 		}
+		*/
 		private void button1_Click(object sender, EventArgs e)
 		{
 			richTextBox1.Text = "";
 			richTextBox1.Text += "Перевірка достатньої умови збіжності ітераційного процесу:";
+			phiExpression = new Expression(textBox1.Text);
+			phiShtrihExpression = new Expression(textBox2.Text);
+
 			bool coincides = true;
 			for(double i=1; i<=10; ++i)
 			{
