@@ -76,7 +76,7 @@ namespace NumericalMethods_Tasks
 			}
 			if (!coincides)
 			{
-				richTextBox1.Text += "\n Достатня умова збіжності |φ'(x)|<1 не виконується!!!!";
+				richTextBox1.Text += "\n Достатня умова збіжності не виконується |φ'(x)|>1!!!!";
 			}
 			else
 			{
