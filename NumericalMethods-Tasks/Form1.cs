@@ -26,6 +26,16 @@ namespace NumericalMethods_Tasks
 			textBox3.Text = "1";
 			textBox4.Text = "0,00001";
 		}
+		private int getRound(double precision)
+		{
+			int roundCount = 0;
+			do
+			{
+				precision *= 10;
+				++roundCount;
+			} while (precision != 1);
+			return roundCount;
+		}
 		private double functionPhiFromX(double x)
 		{
 			phiExpression.Parameters["X"] = x;
@@ -83,8 +93,8 @@ namespace NumericalMethods_Tasks
 					prevXRem = prevX;
 					prevX = curX;
 				} while (Math.Abs(curX - prevXRem) >= precision);
-				richTextBox1.Text += String.Format("\nРозв'язок:::::::::::\n x={0}\nКількість ітерацій: {1}", Math.Round(curX, 5), count);
-				textBox5.Text = Convert.ToString(Math.Round(curX, 5));
+				richTextBox1.Text += String.Format("\nРозв'язок:::::::::::\n x={0}\nКількість ітерацій: {1}", Math.Round(curX, getRound(precision)), count);
+				textBox5.Text = Convert.ToString(Math.Round(curX, getRound(precision)));
 				textBox6.Text = Convert.ToString(count);
 			}
 		}
