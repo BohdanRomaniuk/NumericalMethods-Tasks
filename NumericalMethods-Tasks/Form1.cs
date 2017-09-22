@@ -19,7 +19,14 @@ namespace NumericalMethods_Tasks
 			textBox3.Text = "1";
 			textBox4.Text = "0,00001";
 		}
-
+		private double functionPhiFromX(double x)
+		{
+			return (double)5 / 6 * Math.Cos(x);
+		}
+		private double functionPhiShtrihFromX(double x)
+		{
+			return (double)5 / 6 * Math.Cos(x);
+		}
 		private void button1_Click(object sender, EventArgs e)
 		{
 			richTextBox1.Text = "";
@@ -27,7 +34,7 @@ namespace NumericalMethods_Tasks
 			bool coincides = true;
 			for(double i=1; i<=10; ++i)
 			{
-				double xChecking = (double)5/6*Math.Cos(i);
+				double xChecking = functionPhiShtrihFromX(i);
 				richTextBox1.Text += String.Format("\n |φ'({0})|={1}{2}", i, xChecking, (Math.Abs(xChecking) < 1) ? "<1" : ">1");
 				if (Math.Abs(xChecking) >= 1)
 				{
@@ -49,7 +56,7 @@ namespace NumericalMethods_Tasks
 				double prevXRem;
 				do
 				{
-					curX = (double)5 / 6 * Math.Sin(prevX);
+					curX = functionPhiFromX(prevX);
 					richTextBox1.Text += String.Format("\nНаближення №{1} x({1})=φ(x({0}))\nx({1})={2}\n", count, ++count, curX);
 					prevXRem = prevX;
 					prevX = curX;
