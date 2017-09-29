@@ -1,0 +1,52 @@
+﻿<Window x:Class="_3__Simple__Iteration_and_Newton_SNLE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_3__Simple__Iteration_and_Newton_SNLE"
+        mc:Ignorable="d"
+        Title="Чисельні методи №3" Height="500" Width="700">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="Вхідні Дані" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="95.329" Width="453.592">
+            <Grid Margin="0,0,-2,-12.96">
+                <Label x:Name="label" Content="Метод: " HorizontalAlignment="Left" Height="24.198" Margin="5,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="51.151"/>
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" Width="166.053">
+                    <ComboBoxItem IsSelected="True">Простої ітерації</ComboBoxItem>
+                    <ComboBoxItem>Ньютона</ComboBoxItem>
+                    <ComboBoxItem>Модифікований Ньютона</ComboBoxItem>
+                </ComboBox>
+                <Label x:Name="label1" Content="x=" HorizontalAlignment="Left" Height="25" Margin="5,25,0,0" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="35,25,0,0" TextWrapping="Wrap" Text="3,2-4*Log([X])+1,2*[Y]" VerticalAlignment="Top" Width="186.053"/>
+                <Label x:Name="label2" Content="x=" HorizontalAlignment="Left" Height="25" Margin="5,50,0,0" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="35,50,0,0" TextWrapping="Wrap" Text="2+5*Log([Y])-0,5*[Y]" VerticalAlignment="Top" Width="186.053"/>
+                <Label x:Name="label3" Content="Точність:" HorizontalAlignment="Left" Margin="259.157,0,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox" Height="23" Margin="323.2,0,10,0" TextWrapping="Wrap" Text="0,001" VerticalAlignment="Top"/>
+                <Label x:Name="label4" Content="Початкове наближення:" HorizontalAlignment="Left" Margin="259.157,25,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label5" Content="x0=" HorizontalAlignment="Left" Margin="259.157,50,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="289.344,50,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="55.656"/>
+                <Label x:Name="label6" Content="y0=" HorizontalAlignment="Left" Margin="350,50,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="377.936,50,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="55.656"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Дії" HorizontalAlignment="Left" Margin="475,5,0,0" VerticalAlignment="Top" Height="95.329" Width="207">
+            <Grid>
+                <Button x:Name="button" Content="Розвязати СНАР" Margin="10,10,10,0" VerticalAlignment="Top" Click="button_Click"/>
+                <Button x:Name="button1" Content="Побудувати графік" Margin="10,40,10,0" VerticalAlignment="Top" Click="button1_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox2" Header="Розв'язування" HorizontalAlignment="Left" Margin="5,105.329,0,0" VerticalAlignment="Top" Height="353.671" Width="335.109">
+            <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="330.263" VerticalAlignment="Top" Width="325.109" Margin="0,0,-2,0">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </GroupBox>
+        <GroupBox x:Name="groupBox3" Header="Графік" HorizontalAlignment="Left" Margin="346.891,105.329,0,0" VerticalAlignment="Top" Height="353.671" Width="335.109"/>
+
+
+
+
+    </Grid>
+</Window>

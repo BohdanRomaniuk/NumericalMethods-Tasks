@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1) Simple Iteration", "Nume
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2) Simple Iteration and Seidel SLE", "2) Simple Iteration and Seidel SLE\2) Simple Iteration and Seidel SLE.csproj", "{B40B70C2-2FAB-4503-8E44-32621E7E2784}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3) Simple  Iteration and Newton SNLE", "3) Simple  Iteration and Newton SNLE\3) Simple  Iteration and Newton SNLE.csproj", "{F94872FA-A4D6-4F0E-89E3-74F8B6B0B2DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B40B70C2-2FAB-4503-8E44-32621E7E2784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B40B70C2-2FAB-4503-8E44-32621E7E2784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B40B70C2-2FAB-4503-8E44-32621E7E2784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F94872FA-A4D6-4F0E-89E3-74F8B6B0B2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F94872FA-A4D6-4F0E-89E3-74F8B6B0B2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F94872FA-A4D6-4F0E-89E3-74F8B6B0B2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F94872FA-A4D6-4F0E-89E3-74F8B6B0B2DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
