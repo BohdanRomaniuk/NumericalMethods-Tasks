@@ -10,15 +10,15 @@
         <GroupBox x:Name="groupBox" Header="Вхідні Дані" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="95.329" Width="453.592">
             <Grid Margin="0,0,-2,-12.96">
                 <Label x:Name="label" Content="Метод: " HorizontalAlignment="Left" Height="24.198" Margin="5,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="51.151"/>
-                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" Width="166.053">
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" Width="199.157" SelectionChanged="comboBox_SelectionChanged">
                     <ComboBoxItem IsSelected="True">Простої ітерації</ComboBoxItem>
                     <ComboBoxItem>Ньютона</ComboBoxItem>
                     <ComboBoxItem>Модифікований Ньютона</ComboBoxItem>
                 </ComboBox>
                 <Label x:Name="label1" Content="x=" HorizontalAlignment="Left" Height="25" Margin="5,25,0,0" VerticalAlignment="Top" Width="25"/>
-                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="35,25,0,0" TextWrapping="Wrap" Text="3,2-4*Log([X])+1,2*[Y]" VerticalAlignment="Top" Width="186.053"/>
-                <Label x:Name="label2" Content="x=" HorizontalAlignment="Left" Height="25" Margin="5,50,0,0" VerticalAlignment="Top" Width="25"/>
-                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="35,50,0,0" TextWrapping="Wrap" Text="2+5*Log([Y])-0,5*[Y]" VerticalAlignment="Top" Width="186.053"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="35,25,0,0" TextWrapping="Wrap" Text="5*Log10([Y]) + 2 - [Y]/2" VerticalAlignment="Top" Width="219.157"/>
+                <Label x:Name="label2" Content="y=" HorizontalAlignment="Left" Height="25" Margin="5,50,0,0" VerticalAlignment="Top" Width="25"/>
+                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="35,50,0,0" TextWrapping="Wrap" Text="5*[X]/6 + 10*Log10([X])/3 + 8/3" VerticalAlignment="Top" Width="219.157"/>
                 <Label x:Name="label3" Content="Точність:" HorizontalAlignment="Left" Margin="259.157,0,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="textBox" Height="23" Margin="323.2,0,10,0" TextWrapping="Wrap" Text="0,001" VerticalAlignment="Top"/>
                 <Label x:Name="label4" Content="Початкове наближення:" HorizontalAlignment="Left" Margin="259.157,25,0,0" VerticalAlignment="Top"/>
