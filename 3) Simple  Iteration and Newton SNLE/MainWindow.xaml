@@ -20,12 +20,12 @@
                 <Label x:Name="label2" Content="y=" HorizontalAlignment="Left" Height="25" Margin="5,50,0,0" VerticalAlignment="Top" Width="25"/>
                 <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="35,50,0,0" TextWrapping="Wrap" Text="5*[X]/6 + 10*Log10([X])/3 + 8/3" VerticalAlignment="Top" Width="219.157"/>
                 <Label x:Name="label3" Content="Точність:" HorizontalAlignment="Left" Margin="259.157,0,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox" Height="23" Margin="323.2,0,10,0" TextWrapping="Wrap" Text="0,001" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox" Height="23" Margin="323.2,0,10,0" TextWrapping="Wrap" Text="0,000001" VerticalAlignment="Top"/>
                 <Label x:Name="label4" Content="Початкове наближення:" HorizontalAlignment="Left" Margin="259.157,25,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="label5" Content="x0=" HorizontalAlignment="Left" Margin="259.157,50,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="289.344,50,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="55.656"/>
+                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="289.344,50,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55.656"/>
                 <Label x:Name="label6" Content="y0=" HorizontalAlignment="Left" Margin="350,50,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="377.936,50,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="55.656"/>
+                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="377.936,50,0,0" TextWrapping="Wrap" Text="0,5" VerticalAlignment="Top" Width="55.656"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox1" Header="Дії" HorizontalAlignment="Left" Margin="475,5,0,0" VerticalAlignment="Top" Height="95.329" Width="207">
@@ -36,7 +36,7 @@
         </GroupBox>
         <GroupBox x:Name="groupBox2" Header="Розв'язування" HorizontalAlignment="Left" Margin="5,105.329,0,0" VerticalAlignment="Top" Height="353.671" Width="335.109">
             <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="330.263" VerticalAlignment="Top" Width="325.109" Margin="0,0,-2,0">
-                <FlowDocument>
+                <FlowDocument LineHeight="5">
                     <Paragraph>
                         <Run/>
                     </Paragraph>
