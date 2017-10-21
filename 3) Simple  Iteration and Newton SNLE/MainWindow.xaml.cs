@@ -230,7 +230,6 @@ namespace _3__Simple__Iteration_and_Newton_SNLE
 					result = multiplyMatrixAndVec(invertMatrix, func);
 					xCur = xPrev - result[0];
 					yCur = yPrev - result[1];
-					yCur = calculateY(xPrev, yPrev);
 					//txt.Text += matrix[0, 0] + " " + matrix[0, 1] + "\n";
 					//txt.Text += matrix[1, 0] + " " + matrix[1, 1] + "\n\n";
 					//txt.Text += invertMatrix[0, 0] + " " + invertMatrix[0, 1] + "\n";
