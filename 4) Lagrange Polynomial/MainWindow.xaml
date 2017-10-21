@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_4__Lagrange_Polynomial"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Чисельні методи №4" Height="402" Width="526">
     <Grid>
-        
+        <GroupBox x:Name="inputGroupBox" Header="Вхідні дані" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="82.96" Width="235.697">
+            <Grid>
+                <Label x:Name="xLabel" Content="x:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="xVector" HorizontalAlignment="Left" Height="23" Margin="20.507,2.96,0,0" TextWrapping="Wrap" Text="0 0,5 1,4 2,25 3,5" VerticalAlignment="Top" Width="199"/>
+                <Label x:Name="yLabel" Content="y:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-0.3,30.96,0,0"/>
+                <TextBox x:Name="yVector" HorizontalAlignment="Left" Height="23" Margin="20.507,30.96,0,0" TextWrapping="Wrap" Text="2 1,7 2,36 2,33 3,17" VerticalAlignment="Top" Width="199"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="calculateGroupBox" Header="Функції" HorizontalAlignment="Left" Margin="250.697,5,0,0" VerticalAlignment="Top" Height="82.96" Width="256.303">
+            <Grid>
+                <Label x:Name="xCurLabel" Content="x=" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="xCur" HorizontalAlignment="Left" Height="23" Margin="20.507,2.96,0,0" TextWrapping="Wrap" Text="1,45" VerticalAlignment="Top" Width="33"/>
+                <Label x:Name="yResLabel" Content="y=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-0.3,30.96,0,0"/>
+                <TextBox x:Name="yRes" HorizontalAlignment="Left" Height="23" Margin="20.507,30.96,0,0" TextWrapping="Wrap" Text="?" VerticalAlignment="Top" Width="141"/>
+                <Button x:Name="calculatePolynom" Content="Побудув. поліном" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="58.507,3,0,0" Click="calculatePolynom_Click"/>
+                <Button x:Name="drawGraphic" Content="Графік" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77.796" Margin="166.507,3,0,0" Click="drawGraphic_Click"/>
+                <Button x:Name="calCulateYFromX" Content="Обчислити y" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77.796" Margin="166.507,33.96,0,0" Click="calCulateYFromX_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="polynomGroupBox" Header="Результат побудови інтерполяційного многочлена Лагранджа" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,92.96,0,0" Height="52.96" Width="502">
+            <Grid>
+                <Label x:Name="polynomLabel" Content="Многочлен:" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="lagrangePolynom" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399.737" Margin="80.263,4,0,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="graphicGroupBox" Header="Графік" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,150.92,0,0" Height="210.08" Width="502">
+
+        </GroupBox>
     </Grid>
 </Window>
