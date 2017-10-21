@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_3__Simple__Iteration_and_Newton_SNLE"
         mc:Ignorable="d"
-        Title="Чисельні методи №3" Height="500" Width="700">
+        Title="Чисельні методи №3" Height="500" Width="700" Loaded="LoadGraphic">
     <Grid>
         <GroupBox x:Name="groupBox" Header="Вхідні Дані" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="95.329" Width="453.592">
             <Grid Margin="0,0,-2,-12.96">
@@ -23,15 +23,15 @@
                 <TextBox x:Name="textBox" Height="23" Margin="323.2,0,10,0" TextWrapping="Wrap" Text="0,000001" VerticalAlignment="Top"/>
                 <Label x:Name="label4" Content="Початкове наближення:" HorizontalAlignment="Left" Margin="259.157,25,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="label5" Content="x0=" HorizontalAlignment="Left" Margin="259.157,50,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="289.344,50,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="55.656"/>
+                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="289.344,50,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="55.656"/>
                 <Label x:Name="label6" Content="y0=" HorizontalAlignment="Left" Margin="350,50,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="377.936,50,0,0" TextWrapping="Wrap" Text="0,5" VerticalAlignment="Top" Width="55.656"/>
+                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="377.936,50,0,0" TextWrapping="Wrap" Text="6" VerticalAlignment="Top" Width="55.656"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox1" Header="Дії" HorizontalAlignment="Left" Margin="475,5,0,0" VerticalAlignment="Top" Height="95.329" Width="207">
             <Grid>
                 <Button x:Name="button" Content="Розвязати СНАР" Margin="10,10,10,0" VerticalAlignment="Top" Click="button_Click"/>
-                <Button x:Name="button1" Content="Побудувати графік" Margin="10,40,10,0" VerticalAlignment="Top" Click="button1_Click"/>
+                <Button x:Name="button1" Content="Побудувати графік поч. наб." Margin="10,40,10,0" VerticalAlignment="Top" Click="button1_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox2" Header="Розв'язування" HorizontalAlignment="Left" Margin="5,105.329,0,0" VerticalAlignment="Top" Height="353.671" Width="335.109">
@@ -43,10 +43,10 @@
                 </FlowDocument>
             </RichTextBox>
         </GroupBox>
-        <GroupBox x:Name="groupBox3" Header="Графік" HorizontalAlignment="Left" Margin="346.891,105.329,0,0" VerticalAlignment="Top" Height="353.671" Width="335.109"/>
-
-
-
-
+        <GroupBox x:Name="groupBox3" Header="Графік" HorizontalAlignment="Left" Margin="346.891,105.329,0,0" VerticalAlignment="Top" Height="353.671" Width="335.109">
+            <Grid>
+                <Canvas Name="canGraph" Width="300" Height="300" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White"/>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
