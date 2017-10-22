@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_4__Lagrange_Polynomial"
         mc:Ignorable="d"
-        Title="Чисельні методи №4" Height="402" Width="526">
+        Title="Чисельні методи №4" Height="517" Width="523" Loaded="LoadGraphic">
     <Grid>
         <GroupBox x:Name="inputGroupBox" Header="Вхідні дані" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Height="82.96" Width="235.697">
             <Grid>
@@ -32,8 +32,8 @@
                 <TextBox x:Name="lagrangePolynom" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="399.737" Margin="80.263,4,0,0"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="graphicGroupBox" Header="Графік" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,150.92,0,0" Height="210.08" Width="502">
-
+        <GroupBox x:Name="graphicGroupBox" Header="Графік" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,150.92,0,0" Height="325.08" Width="500">
+            <Canvas Name="canGraph" Width="480" Height="300" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White"/>
         </GroupBox>
     </Grid>
 </Window>

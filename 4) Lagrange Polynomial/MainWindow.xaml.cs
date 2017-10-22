@@ -89,17 +89,109 @@ namespace _4__Lagrange_Polynomial
 		private void calCulateYFromX_Click(object sender, RoutedEventArgs e)
 		{
 			double x = Convert.ToDouble(xCur.Text);
+			yRes.Text = calculateValueFromX(x).ToString();
+		}
+
+		private double calculateValueFromX(double x)
+		{
 			double y = 0;
-			for(int i=0; i<quantity; ++i)
+			for (int i = 0; i < quantity; ++i)
 			{
 				y += polynomial[i] * Math.Pow(x, i);
 			}
-			yRes.Text = y.ToString();
+			return y;
 		}
 
 		private void drawGraphic_Click(object sender, RoutedEventArgs e)
 		{
+			double ymax = canGraph.Height - 20;
+			double xmax = canGraph.Width - 20;
+			PointCollection points = new PointCollection();
 
+			for(uint x=20; x<xmax; ++x)
+			{
+				double y = calculateValueFromX((double)x/20-1);
+				points.Add(new Point(x, ymax - y * 20));
+			}
+
+			Polyline polyline = new Polyline();
+			polyline.StrokeThickness = 1;
+			polyline.Stroke = Brushes.Blue;
+			polyline.Points = points;
+			canGraph.Children.Add(polyline);
+			MessageBox.Show("Графік побудовано", "Важлива інформація");
+		}
+
+		private void LoadGraphic(object sender, RoutedEventArgs e)
+		{
+			const double margin = 20;
+			double xmin = margin;
+			double xmax = canGraph.Width - margin;
+			double ymin = margin;
+			double ymax = canGraph.Height - margin;
+			const double step = 20;
+
+			// Make the X axis.
+			GeometryGroup xaxis_geom = new GeometryGroup();
+			xaxis_geom.Children.Add(new LineGeometry(
+				new Point(0, ymax), new Point(canGraph.Width, ymax)));
+			for (double x = xmin + step; x <= canGraph.Width - step; x += step)
+			{
+				xaxis_geom.Children.Add(new LineGeometry(new Point(x, ymax - margin / 4), new Point(x, ymax + margin / 4)));
+				DrawText(canGraph, (x / 20 - 1).ToString(), new Point(x, ymax + margin / 4), 12, HorizontalAlignment.Center, VerticalAlignment.Top);
+			}
+
+			Path xaxis_path = new Path();
+			xaxis_path.StrokeThickness = 1;
+			xaxis_path.Stroke = Brushes.Black;
+			xaxis_path.Data = xaxis_geom;
+
+			canGraph.Children.Add(xaxis_path);
+
+			// Make the Y ayis.
+			GeometryGroup yaxis_geom = new GeometryGroup();
+			yaxis_geom.Children.Add(new LineGeometry(
+				new Point(xmin, 0), new Point(xmin, canGraph.Height)));
+			int count = 13;
+			for (double y = ymin + step; y <= canGraph.Height - step; y += step)
+			{
+				yaxis_geom.Children.Add(new LineGeometry(new Point(xmin - margin / 4, y), new Point(xmin + margin / 4, y)));
+				DrawText(canGraph, (count--).ToString(), new Point(xmin - margin, y - 35), 12, HorizontalAlignment.Center, VerticalAlignment.Top);
+			}
+
+			Path yaxis_path = new Path();
+			yaxis_path.StrokeThickness = 1;
+			yaxis_path.Stroke = Brushes.Black;
+			yaxis_path.Data = yaxis_geom;
+
+			canGraph.Children.Add(yaxis_path);
+		}
+		private void DrawText(Canvas can, string text, Point location,
+			double font_size,
+			HorizontalAlignment halign, VerticalAlignment valign)
+		{
+			// Make the label.
+			Label label = new Label();
+			label.Content = text;
+			label.FontSize = font_size;
+			can.Children.Add(label);
+
+			// Position the label.
+			label.Measure(new Size(double.MaxValue, double.MaxValue));
+
+			double x = location.X;
+			if (halign == HorizontalAlignment.Center)
+				x -= label.DesiredSize.Width / 2;
+			else if (halign == HorizontalAlignment.Right)
+				x -= label.DesiredSize.Width;
+			Canvas.SetLeft(label, x);
+
+			double y = location.Y;
+			if (valign == VerticalAlignment.Center)
+				y -= label.DesiredSize.Height / 2;
+			else if (valign == VerticalAlignment.Bottom)
+				y -= label.DesiredSize.Height;
+			Canvas.SetTop(label, y);
 		}
 	}
 }
