@@ -5,21 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_5__Backward_Newton"
         mc:Ignorable="d"
-        Title="Чисельні Методи №5" Height="350" Width="525">
+        Title="Чисельні Методи №5" Height="329.008" Width="525.512">
     <Grid>
-        <GroupBox x:Name="groupBox" Header="Вхідні дані" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="241">
+        <GroupBox x:Name="groupBox" Header="Вхідні дані" HorizontalAlignment="Left" VerticalAlignment="Top" Height="82" Width="317">
             <Grid>
                 <Label x:Name="funclabel" Content="Функція:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox x:Name="function" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="([X]/2+1)*Sin([X])" VerticalAlignment="Top" Width="158" Margin="61,3,0,0"/>
+                <TextBox x:Name="function" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="([X]/2+1)*Sin([X])" VerticalAlignment="Top" Width="128" Margin="61,3,0,0"/>
+
                 <Label x:Name="alabel" Content="a=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,31,0,0"/>
-                <TextBox x:Name="aValue" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1,0" VerticalAlignment="Top" Width="68" Margin="30,34,0,0"/>
-                <Label x:Name="blabel" Content="b=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="103,31,0,0"/>
-                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="3,0" VerticalAlignment="Top" Width="91" Margin="128,34,0,0"/>
+                <TextBox x:Name="aValue" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1,0" VerticalAlignment="Top" Width="26" Margin="25,34,0,0"/>
+                <Label x:Name="blabel" Content="b=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,31,0,0"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="3,0" VerticalAlignment="Top" Width="24" Margin="81,34,0,0"/>
+                <Label x:Name="label" Content="xi=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,31,0,0"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1,1 1,3 1,7 2,3 2,4 2,9" VerticalAlignment="Top" Width="158" Margin="137,34,0,0"/>
+                <Label x:Name="label1" Content="x*=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="194,0,0,0"/>
+                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="2,1" VerticalAlignment="Top" Width="73" Margin="222,3,0,0"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox1" Header="Функції" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,0,0,0" Height="82" Width="263">
+        <GroupBox x:Name="groupBox1" Header="Функції" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="322,0,0,0" Height="82" Width="187">
+            <Grid Margin="0,0,0.104,0.136">
+                <Button x:Name="button" Content="Обчислити f(xi)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Margin="7,6,0,0" Click="button_Click"/>
+                <Button x:Name="button1" Content="Поліном" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="100,6,0,0" Click="button1_Click"/>
+                <Button x:Name="button2" Content="Значення в точці x*" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158" Margin="7,32,0,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox2" Header="Обчислення" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,87,0,0" Height="203" Width="509">
             <Grid>
-                
+                <Label x:Name="label2" Content="f(xi)=" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444" Margin="43,3,0,0"/>
+                <Label x:Name="label3" Content="f*(x)=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,53,0,0"/>
+                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="42" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="444" Margin="43,53,0,0"/>
+                <Label x:Name="label4" Content="Кількість членів інтерполяційної формули: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,95,0,0"/>
+                <Label x:Name="count" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,95,0,0" FontWeight="Bold"/>
+                <Label x:Name="label5" Content="Значення f*(x*)=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,126,0,0"/>
+                <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="106,126,0,0"/>
+                <Label x:Name="label6" Content="Похибка D=|f(x*)-f*(x*)|=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,154,0,0"/>
+                <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="82" Margin="144,157,0,0"/>
             </Grid>
         </GroupBox>
     </Grid>
