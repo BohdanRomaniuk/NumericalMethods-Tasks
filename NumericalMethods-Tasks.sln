@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3) Simple  Iteration and Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4) Lagrange Polynomial", "4) Lagrange Polynomial\4) Lagrange Polynomial.csproj", "{6B19FDBD-47DF-484B-809E-05819BF56D9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5) Backward Newton", "5) Backward Newton\5) Backward Newton.csproj", "{FC252F2E-9EA7-411A-A011-35131D1673C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6B19FDBD-47DF-484B-809E-05819BF56D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B19FDBD-47DF-484B-809E-05819BF56D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B19FDBD-47DF-484B-809E-05819BF56D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC252F2E-9EA7-411A-A011-35131D1673C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC252F2E-9EA7-411A-A011-35131D1673C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC252F2E-9EA7-411A-A011-35131D1673C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC252F2E-9EA7-411A-A011-35131D1673C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

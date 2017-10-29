@@ -33,7 +33,9 @@
             </Grid>
         </GroupBox>
         <GroupBox x:Name="graphicGroupBox" Header="Графік" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,150.92,0,0" Height="325.08" Width="500">
-            <Canvas Name="canGraph" Width="480" Height="300" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White"/>
+            <Grid>
+                <Canvas Name="canGraph" Width="480" Height="300" VerticalAlignment="Center" HorizontalAlignment="Center" Background="White"/>
+            </Grid>
         </GroupBox>
     </Grid>
 </Window>

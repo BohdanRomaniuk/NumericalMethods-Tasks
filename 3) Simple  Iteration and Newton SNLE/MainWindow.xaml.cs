@@ -44,20 +44,21 @@ namespace _3__Simple__Iteration_and_Newton_SNLE
 			} while (precision != 1);
 			return roundCount;
 		}
-		/*
-		private double calculateX(double x, double y)
-		{
-			//return Math.Sin(0.5 * (x - y)) / 2;
-			return 5 * Math.Log10(y) + 2 - y / 2;
-		}
-		private double calculateY(double x, double y)
-		{
-			//return Math.Cos(0.5 * (x + y)) / 2;
-			return 5 * (x / 6) + 10 * (Math.Log10(x) / 3) + 8 / 3;
-		}
-		*/
 
+        /*
 		private double calculateX(double x, double y)
+		{
+            return Math.Sin(0.5 * (x - y)) / 2;
+            //return 5 * Math.Log10(y) + 2 - y / 2;
+        }
+        private double calculateY(double x, double y)
+		{
+            return Math.Cos(0.5 * (x + y)) / 2;
+            //return 5 * x / 6 + 10 * Math.Log10(x) / 3 + 8 / 3;
+        }
+        */
+
+        private double calculateX(double x, double y)
 		{
 			e1.Parameters["X"] = x;
 			e1.Parameters["Y"] = y;
@@ -70,33 +71,35 @@ namespace _3__Simple__Iteration_and_Newton_SNLE
 			e2.Parameters["Y"] = y;
 			return (double)e2.Evaluate();
 		}
+		
 
-		private double calculateF1(double x, double y)
+        private double calculateF1(double x, double y)
 		{
-			//return 2 * x - Math.Sin(0.5 * (x - y));
-			return 5 * x - 6 * y + 20 * Math.Log10(x) + 16;
-		}
+            //return 2 * x - Math.Sin(0.5 * (x - y));
+            return 5 * x - 6 * y + 20 * Math.Log10(x) + 16;
+        }
 
-		private double calculateF2(double x, double y)
+        private double calculateF2(double x, double y)
 		{
-			//return 2 * y - Math.Cos(0.5 * (x + y));
-			return 2 * x + y - 10 * Math.Log10(y) - 4;
-		}
+            //return 2 * y - Math.Cos(0.5 * (x + y));
+            return 2 * x + y - 10 * Math.Log10(y) - 4;
+        }
 
-		private double[,] calculateJacobiMatrix(double x, double y)
+        private double[,] calculateJacobiMatrix(double x, double y)
 		{
 			double[,] result = new double[2, 2];
-			/*
+            /*
 			result[0, 0] = 2 - 0.5 * Math.Cos(0.5 * (x - y));
 			result[0, 1] = 0.5 * Math.Cos(0.5 * (x - y));
 			result[1, 0] = 0.5 * Math.Sin(0.5 * (x + y));
 			result[1, 1] = 2 + 0.5 * Math.Sin(0.5 * (x + y));
-			*/
-			result[0, 0] = 5 + 20 / (x * Math.Log(10));
+            */
+            result[0, 0] = 5 + 20 / (x * Math.Log(10));
 			result[0, 1] = -6;
 			result[1, 0] = 2;
 			result[1, 1] = 1 - 10 / (y * Math.Log(10));
-			return result;
+            
+            return result;
 		}
 		private double[,] calculateInvertMatrix(double[,] matrix, double precision)
 		{
@@ -258,8 +261,16 @@ namespace _3__Simple__Iteration_and_Newton_SNLE
 			txt.Text += (string.Format("Розвязок: x={0}\ty={1}\nКількість ітерацій: {2}", Math.Round(xCur, getRound(precision)), Math.Round(yCur, getRound(precision)), count));
 		}
 
-		//Graphic
-		private void button1_Click(object sender, RoutedEventArgs e)
+        private double calculateValueFromX(double x)
+        {
+            return (5 / 6) * x + (10 / 3) * Math.Log10(x) + 8 / 3;
+        }
+        private double calculateValueFromY(double y)
+        {
+            return 5 * Math.Log10(y) + 2 - y / 2;
+        }
+        //Graphic
+        private void button1_Click(object sender, RoutedEventArgs e)
 		{
 			double ymax = canGraph.Height - 20;
 			double xmax = canGraph.Width - 20;
@@ -286,7 +297,35 @@ namespace _3__Simple__Iteration_and_Newton_SNLE
 			polyline2.Stroke = Brushes.Red;
 			polyline2.Points = points2;
 
-			canGraph.Children.Add(polyline1);
+            PointCollection points3 = new PointCollection();
+
+            for (uint x = 40; x < xmax; ++x)
+            {
+                double y = calculateValueFromX((double)x / 20 - 1);
+                points3.Add(new Point(x, ymax - y * 20));
+            }
+
+            Polyline polyline3 = new Polyline();
+            polyline3.StrokeThickness = 1;
+            polyline3.Stroke = Brushes.Blue;
+            polyline3.Points = points3;
+            canGraph.Children.Add(polyline3);
+
+            PointCollection points4 = new PointCollection();
+
+            for (uint y = 1; y <= 13; ++y)
+            {
+                double x = calculateValueFromY(y);
+                points4.Add(new Point(x * 20 + 20, ymax - 20 - y * 20));
+            }
+
+            Polyline polyline4 = new Polyline();
+            polyline4.StrokeThickness = 1;
+            polyline4.Stroke = Brushes.Green;
+            polyline4.Points = points4;
+            canGraph.Children.Add(polyline4);
+
+            canGraph.Children.Add(polyline1);
 			canGraph.Children.Add(polyline2);
 		}
 
