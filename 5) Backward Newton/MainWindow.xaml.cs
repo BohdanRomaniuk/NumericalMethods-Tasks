@@ -37,7 +37,17 @@ namespace _5__Backward_Newton
                 vectorX[i] = Convert.ToDouble(xValues[i]);
             }
         }
-        private double[] multiplyPolynoms(double[] first, double[] second)
+		private int getRound(double precision)
+		{
+			int roundCount = 0;
+			do
+			{
+				precision *= 10;
+				++roundCount;
+			} while (precision != 1);
+			return roundCount;
+		}
+		private double[] multiplyPolynoms(double[] first, double[] second)
         {
             double[] result = new double[first.Length + second.Length - 1];
             for (int i = 0; i < first.Length; ++i)
@@ -49,7 +59,21 @@ namespace _5__Backward_Newton
             }
             return result;
         }
-        private double calculateFx(double x)
+		private double[] sumPolynoms(double[] first, double[] second)
+		{
+			double[] result = new double[(first.Length > second.Length) ? first.Length: second.Length];
+			for(int i=0; i<first.Length; ++i)
+			{
+				result[i] = first[i];
+			}
+			for(int i=0; i<second.Length; ++i)
+			{
+				result[i] = second[i];
+			}
+			return result;
+		}
+
+		private double calculateFx(double x)
         {
             exp.Parameters["X"] = x;
             return (double)exp.Evaluate();
@@ -74,17 +98,44 @@ namespace _5__Backward_Newton
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             polynomial = new double[1]{ vectorY[vectorY.Length-1]};
-            int count = 1;
-            for (int i=vectorX.Length; i>=0; --i)
+			for (int i = vectorX.Length - 1; i > 0; --i)
             {
-                double[] new_pol = new double[2] { 1, -vectorY[vectorY.Length - 1] };
-                for(int j=0; j<count; ++j)
+                double[] new_pol = new double[1] { calculateSplitSub(i - 1, vectorX.Length - 1, vectorX, vectorY) };
+				for (int j = vectorX.Length - 1; j >= i; --j)
                 {
-
+					new_pol = multiplyPolynoms(new_pol, new double[2] { -vectorX[j], 1 });
                 }
-                ++count;
-                new_pol = multiplyPolynoms(new_pol, new double[1] { calculateSplitSub(vectorX.Length - 1, i, vectorX, vectorY) });
+				polynomial = sumPolynoms(polynomial, new_pol);
             }
-        }
-    }
+
+			int quantity = 0;
+			for (int i = polynomial.Length - 1; i >= 0; --i)
+			{
+				if (polynomial[i] != 0)
+				{
+					textBox4.Text += String.Format("{0}{1}{2}", (polynomial[i] >= 0 && i != polynomial.Length - 1) ? "+" : "", Math.Round(polynomial[i], 2), (i != 0) ? "x^" + i : "");
+					++quantity;
+				}
+			}
+			count.Content = quantity;
+		}
+
+		private double calculateVFromX(double x)
+		{
+			double y = 0;
+			for (int i = 0; i < polynomial.Length; ++i)
+			{
+				y += polynomial[i] * Math.Pow(x, i);
+			}
+			return y;
+		}
+
+		private void button2_Click(object sender, RoutedEventArgs e)
+		{
+			double x = Convert.ToDouble(textBox2.Text);
+			double precision = Convert.ToDouble(textBox7.Text);
+			textBox5.Text = Math.Round(calculateFx(x), getRound(precision)).ToString();
+			textBox6.Text = Math.Abs(Math.Round(calculateFx(x), getRound(precision)) - calculateFx(x)).ToString();
+		}
+	}
 }

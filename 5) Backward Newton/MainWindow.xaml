@@ -16,17 +16,19 @@
                 <TextBox x:Name="aValue" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1,0" VerticalAlignment="Top" Width="26" Margin="25,34,0,0"/>
                 <Label x:Name="blabel" Content="b=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,31,0,0"/>
                 <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="3,0" VerticalAlignment="Top" Width="24" Margin="81,34,0,0"/>
-                <Label x:Name="label" Content="xi=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110,31,0,0"/>
-                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1,1 1,3 1,7 2,3 2,4 2,9" VerticalAlignment="Top" Width="158" Margin="137,34,0,0"/>
-                <Label x:Name="label1" Content="x*=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="194,0,0,0"/>
-                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="2,1" VerticalAlignment="Top" Width="73" Margin="222,3,0,0"/>
+                <Label x:Name="label" Content="xi=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="116,31,0,0"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1,1 1,3 1,7 2,3 2,4 2,9" VerticalAlignment="Top" Width="168" Margin="137,34,0,0"/>
+                <Label x:Name="label1" Content="x*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="188,0,0,0"/>
+                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="2,1" VerticalAlignment="Top" Width="32" Margin="206,3,0,0"/>
+                <Label x:Name="label7" Content="e" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="238,0,0,0"/>
+                <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0,001" VerticalAlignment="Top" Width="51" Margin="254,3,0,0"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox1" Header="Функції" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="322,0,0,0" Height="82" Width="187">
             <Grid Margin="0,0,0.104,0.136">
                 <Button x:Name="button" Content="Обчислити f(xi)" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Margin="7,6,0,0" Click="button_Click"/>
                 <Button x:Name="button1" Content="Поліном" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="100,6,0,0" Click="button1_Click"/>
-                <Button x:Name="button2" Content="Значення в точці x*" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158" Margin="7,32,0,0"/>
+                <Button x:Name="button2" Content="Значення в точці x*" HorizontalAlignment="Left" VerticalAlignment="Top" Width="158" Margin="7,32,0,0" Click="button2_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox2" Header="Обчислення" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,87,0,0" Height="203" Width="509">
@@ -38,9 +40,9 @@
                 <Label x:Name="label4" Content="Кількість членів інтерполяційної формули: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,95,0,0"/>
                 <Label x:Name="count" Content="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,95,0,0" FontWeight="Bold"/>
                 <Label x:Name="label5" Content="Значення f*(x*)=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,126,0,0"/>
-                <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="106,126,0,0"/>
+                <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="381" Margin="106,126,0,0"/>
                 <Label x:Name="label6" Content="Похибка D=|f(x*)-f*(x*)|=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,154,0,0"/>
-                <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="82" Margin="144,157,0,0"/>
+                <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="343" Margin="144,157,0,0"/>
             </Grid>
         </GroupBox>
     </Grid>
