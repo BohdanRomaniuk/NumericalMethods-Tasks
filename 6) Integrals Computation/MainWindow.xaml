@@ -7,33 +7,31 @@
         mc:Ignorable="d"
         Title="Чисельні Методи №6" Height="280" Width="575.366">
     <Grid Margin="0,0,0,0">
-        <GroupBox x:Name="groupBox" Header="Вхідні дані" HorizontalAlignment="Left" VerticalAlignment="Top" Height="106" Width="302">
+        <GroupBox x:Name="groupBox" Header="Вхідні дані" HorizontalAlignment="Left" VerticalAlignment="Top" Height="106" Width="326">
             <Grid>
                 <Label x:Name="label1" Content="Функція: " HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1/Sqrt(5*[X]*[X]-0.4)" VerticalAlignment="Top" Width="216" Margin="64,0,0,0"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1/Sqrt(5*[X]*[X]-0.4)" VerticalAlignment="Top" Width="240" Margin="64,0,0,0"/>
                 <Label x:Name="label2" Content="Первісна: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,26,0,0"/>
-                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="(1/Sqrt(5))*Log([X]+Sqrt([X]*[X]-0.08))" VerticalAlignment="Top" Width="216" Margin="64,26,0,0"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="(1/Sqrt(5))*Log([X]+Sqrt([X]*[X]-0.08),Exp(1))" VerticalAlignment="Top" Width="240" Margin="64,26,0,0"/>
                 <Label x:Name="label3" Content="a=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,48,0,0"/>
                 <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1,3" VerticalAlignment="Top" Width="26" Margin="24,52,0,0"/>
                 <Label x:Name="label3_Copy" Content="b=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,49,0,0"/>
                 <TextBox x:Name="textBox2_Copy" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="2,1" VerticalAlignment="Top" Width="26" Margin="76,52,0,0"/>
-                <Label x:Name="label3_Copy1" Content="e=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,49,0,0"/>
-                <TextBox x:Name="textBox2_Copy1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0,001" VerticalAlignment="Top" Width="59" Margin="131,52,0,0"/>
-                <Label x:Name="label4" Content="h=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="195,49,0,0"/>
-                <TextBox x:Name="textBox2_Copy2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0,01" VerticalAlignment="Top" Width="59" Margin="221,52,0,0"/>
+                <Label x:Name="label3_Copy1" Content="e(точність, крок)=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,49,0,0"/>
+                <TextBox x:Name="textBox2_Copy1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0,0001" VerticalAlignment="Top" Width="83" Margin="221,52,0,0"/>
             </Grid>
         </GroupBox>
-        <GroupBox x:Name="groupBox1" Header="Функції" HorizontalAlignment="Left" Margin="307,0,0,0" VerticalAlignment="Top" Height="106" Width="252">
+        <GroupBox x:Name="groupBox1" Header="Функції" HorizontalAlignment="Left" Margin="331,0,0,0" VerticalAlignment="Top" Height="106" Width="228">
             <Grid>
                 <Label x:Name="label" Content="Метод: " HorizontalAlignment="Left" VerticalAlignment="Top" Width="52"/>
-                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="177" Margin="52,3,0,0">
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Margin="52,4,0,0">
                     <ComboBoxItem IsSelected="True">Прямокутників</ComboBoxItem>
                     <ComboBoxItem>Трапецій</ComboBoxItem>
                     <ComboBoxItem>Парабол</ComboBoxItem>
                     <ComboBoxItem>Гауса 4-точкову</ComboBoxItem>
                     <ComboBoxItem>Гауса 5-точкову</ComboBoxItem>
                 </ComboBox>
-                <Button x:Name="button" Content="Обчислити інтеграл" HorizontalAlignment="Left" VerticalAlignment="Top" Width="219" Margin="10,31,0,0"/>
+                <Button x:Name="button" Content="Обчислити інтеграл" HorizontalAlignment="Left" VerticalAlignment="Top" Width="196" Margin="10,31,0,0" Click="button_Click"/>
             </Grid>
         </GroupBox>
         <GroupBox x:Name="groupBox2" Header="Обчислення" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,111,0,0" Height="127" Width="559">
