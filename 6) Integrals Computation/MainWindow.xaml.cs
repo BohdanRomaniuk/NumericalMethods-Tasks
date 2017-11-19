@@ -56,58 +56,6 @@ namespace _6__Integrals_Computation
             perv.Parameters["X"] = x;
             return (double)perv.Evaluate();
         }
-        /*
-        private int fac(int a)
-        {
-            int result = 1;
-            for(int i=1; i<=a; ++i)
-            {
-                result*= i;
-            }
-            return result;
-        }
-        private double[] multiplyPolynoms(double[] first, double[] second)
-        {
-            double[] result = new double[first.Length + second.Length - 1];
-            for (int i = 0; i < first.Length; ++i)
-            {
-                for (int j = 0; j < second.Length; ++j)
-                {
-                    result[i + j] += first[i] * second[j];
-                }
-            }
-            return result;
-        }
-        private double[] sumPolynoms(double[] first, double[] second)
-        {
-            double[] result = new double[(first.Length > second.Length) ? first.Length : second.Length];
-            for (int i = 0; i < first.Length; ++i)
-            {
-                result[i] = first[i];
-            }
-            for (int i = 0; i < second.Length; ++i)
-            {
-                result[i] = second[i];
-            }
-            return result;
-        }
-        private double differential(double[] coefficients, int numCoefficients, double x)
-        {
-            double ret = 0;
-            for (int i = 0; i < numCoefficients; ++i)
-                ret += x * i * Math.Pow(coefficients[i], i - 1);
-            return ret;
-        }
-        private double calculateCoeficient(double xk,int n,double a,double b)
-        {
-            double result = (Math.Pow(fac(n),4)*Math.Pow(b-a,2*n-1))/ (Math.Pow(fac(2*n),2)*(xk-a)*(b-xk));
-            return result;
-        }
-        private double calculatCoeficient(double xk, int n, double a, double b)
-        {
-            return 1;
-        }
-        */
         private void button_Click(object sender, RoutedEventArgs e)
         {
             func = new NCalc.Expression(textBox.Text);
@@ -119,6 +67,7 @@ namespace _6__Integrals_Computation
             uint iterations = 0;
             double result = 0;
             int n = (int)((b - a)/precision);
+            double h=0, h2=0, h4=0;
             if(methodType==0)//Прямокутників
             {
                 double sum = 0;
@@ -128,22 +77,53 @@ namespace _6__Integrals_Computation
                     ++iterations;
                 }
                 result = precision * sum;
+
+                //Порядок збіжності
+                h = result;
+                sum = 0;
+                for (int i = 1; i <= n - 1; i += 2)
+                {
+                    sum += calculateFunction(a + (i * precision) / 2);
+                }
+                h2 = precision * sum;
+
+                sum = 0;
+                for (int i = 1; i <= n/2 - 1; i += 2)
+                {
+                    sum += calculateFunction(a + (i * precision) / 2);
+                }
+                h4 = precision * sum;
             }
             else if(methodType==1)//Трапецій
             {
                 double sum = calculateFunction(a)+calculateFunction(b);
-                iterations = 2;
+                iterations = 1;
                 for(int i=1; i<=n-1; ++i)
                 {
                     sum += 2 * calculateFunction(a + i * precision);
                     ++iterations;
                 }
                 result = (precision / 2) * sum;
+
+                //Порядок збіжності
+                h = result;
+                sum = calculateFunction(a) + calculateFunction(b);
+                for (int i = 1; i <= n/2 - 1; ++i)
+                {
+                    sum += 2 * calculateFunction(a + i * precision);
+                }
+                h2 = (precision / 2) * sum;
+                sum = calculateFunction(a) + calculateFunction(b);
+                for (int i = 1; i <= n / 4 - 1; ++i)
+                {
+                    sum += 2 * calculateFunction(a + i * precision);
+                }
+                h4 = (precision / 2) * sum;
             }
             else if(methodType==2)//Парабол
             {
                 double sum = calculateFunction(a) + calculateFunction(b);
-                iterations = 2;
+                iterations = 1;
                 int duplicator = 4;
                 for(int i=1; i<=2*n-1; ++i)
                 {
@@ -152,6 +132,23 @@ namespace _6__Integrals_Computation
                     ++iterations;
                 }
                 result = (precision / 6) * sum;
+
+                //Порядок збіжності
+                h = result;
+                sum = calculateFunction(a) + calculateFunction(b);
+                for (int i = 1; i <= n - 1; ++i)
+                {
+                    sum += duplicator * calculateFunction(a + i * (precision / 2));
+                    duplicator = (duplicator == 4) ? 2 : 4;
+                }
+                h2 = (precision / 6) * sum;
+                sum = calculateFunction(a) + calculateFunction(b);
+                for (int i = 1; i <= n/2 - 1; ++i)
+                {
+                    sum += duplicator * calculateFunction(a + i * (precision / 2));
+                    duplicator = (duplicator == 4) ? 2 : 4;
+                }
+                h4 = (precision / 6) * sum;
             }
             else if(methodType==3)//Гауса чотириточкова
             {
@@ -173,6 +170,25 @@ namespace _6__Integrals_Computation
                     ++iterations;
                 }
                 result = sum * (b - a) / 2;
+
+                //Порядок збіжності
+                h = result;
+                sum = 0;
+                double tb = a + ((b - a) / 2);
+                for (int i = 0; i < 4; ++i)
+                {
+                    double xi = (tb + a) / 2 + (t[i] * (tb - a)) / 2;
+                    sum += c[i] * calculateFunction(xi);
+                }
+                h2 = sum * (tb - a) / 2;
+                sum = 0;
+                tb = a + ((tb - a) / 2);
+                for (int i = 0; i < 4; ++i)
+                {
+                    double xi = (tb + a) / 2 + (t[i] * (tb - a)) / 2;
+                    sum += c[i] * calculateFunction(xi);
+                }
+                h4 = sum * (tb - a) / 2;
             }
             else if(methodType==4)//Гауса пятиточкова
             {
@@ -196,10 +212,30 @@ namespace _6__Integrals_Computation
                     ++iterations;
                 }
                 result = sum * (b - a) / 2;
+
+                //Порядок збіжності
+                h = result;
+                sum = 0;
+                double tb = a + ((b - a) / 2);
+                for (int i = 0; i < 4; ++i)
+                {
+                    double xi = (tb + a) / 2 + (t[i] * (tb - a)) / 2;
+                    sum += c[i] * calculateFunction(xi);
+                }
+                h2 = sum * (tb - a) / 2;
+                sum = 0;
+                tb = a + ((tb - a) / 2);
+                for (int i = 0; i < 4; ++i)
+                {
+                    double xi = (tb + a) / 2 + (t[i] * (tb - a)) / 2;
+                    sum += c[i] * calculateFunction(xi);
+                }
+                h4 = sum * (tb - a) / 2;
             }
             textBox3.Text = Math.Round(result,getRound(precision)).ToString();
             textBox4.Text = (calculatePervisna(b) - calculatePervisna(a)).ToString();
             label8.Content = iterations;
+            label10.Content = Math.Log((h - h2) / (h2 - h4)) / Math.Log(2);
         }
     }
 }
