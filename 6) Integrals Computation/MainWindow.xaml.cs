@@ -56,6 +56,58 @@ namespace _6__Integrals_Computation
             perv.Parameters["X"] = x;
             return (double)perv.Evaluate();
         }
+        /*
+        private int fac(int a)
+        {
+            int result = 1;
+            for(int i=1; i<=a; ++i)
+            {
+                result*= i;
+            }
+            return result;
+        }
+        private double[] multiplyPolynoms(double[] first, double[] second)
+        {
+            double[] result = new double[first.Length + second.Length - 1];
+            for (int i = 0; i < first.Length; ++i)
+            {
+                for (int j = 0; j < second.Length; ++j)
+                {
+                    result[i + j] += first[i] * second[j];
+                }
+            }
+            return result;
+        }
+        private double[] sumPolynoms(double[] first, double[] second)
+        {
+            double[] result = new double[(first.Length > second.Length) ? first.Length : second.Length];
+            for (int i = 0; i < first.Length; ++i)
+            {
+                result[i] = first[i];
+            }
+            for (int i = 0; i < second.Length; ++i)
+            {
+                result[i] = second[i];
+            }
+            return result;
+        }
+        private double differential(double[] coefficients, int numCoefficients, double x)
+        {
+            double ret = 0;
+            for (int i = 0; i < numCoefficients; ++i)
+                ret += x * i * Math.Pow(coefficients[i], i - 1);
+            return ret;
+        }
+        private double calculateCoeficient(double xk,int n,double a,double b)
+        {
+            double result = (Math.Pow(fac(n),4)*Math.Pow(b-a,2*n-1))/ (Math.Pow(fac(2*n),2)*(xk-a)*(b-xk));
+            return result;
+        }
+        private double calculatCoeficient(double xk, int n, double a, double b)
+        {
+            return 1;
+        }
+        */
         private void button_Click(object sender, RoutedEventArgs e)
         {
             func = new NCalc.Expression(textBox.Text);
@@ -103,11 +155,47 @@ namespace _6__Integrals_Computation
             }
             else if(methodType==3)//Гауса чотириточкова
             {
-
+                double[] t = new double[4];
+                t[0] = -0.8611363;
+                t[1] = -0.339981;
+                t[2] = 0.339981;
+                t[3] = 0.861136;
+                double[] c = new double[4];
+                c[0] = 0.3478548;
+                c[1] = 0.6521452;
+                c[2] = 0.6521452;
+                c[3] = 0.3478548;
+                double sum = 0;
+                for(int i=0; i<4; ++i)
+                {
+                    double xi = (b + a) / 2 + (t[i] * (b - a)) / 2;
+                    sum += c[i] * calculateFunction(xi);
+                    ++iterations;
+                }
+                result = sum * (b - a) / 2;
             }
             else if(methodType==4)//Гауса пятиточкова
             {
-
+                double[] t = new double[5];
+                t[0] = -0.9061798;
+                t[1] = -0.5384693;
+                t[2] = 0;
+                t[3] = 0.5384693;
+                t[4] = 0.9061798;
+                double[] c = new double[5];
+                c[0] = 0.2369269;
+                c[1] = 0.4786287;
+                c[2] = 0.5688889;
+                c[3] = 0.4786287;
+                c[4] = 0.2369269;
+                double sum = 0;
+                for (int i = 0; i < 5; ++i)
+                {
+                    double xi = (b + a) / 2 + (t[i] * (b - a)) / 2;
+                    sum += c[i] * calculateFunction(xi);
+                    ++iterations;
+                }
+                result = sum * (b - a) / 2;
             }
             textBox3.Text = Math.Round(result,getRound(precision)).ToString();
             textBox4.Text = (calculatePervisna(b) - calculatePervisna(a)).ToString();
