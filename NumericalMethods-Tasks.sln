@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5) Backward Newton", "5) Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6) Integrals Computation", "6) Integrals Computation\6) Integrals Computation.csproj", "{15E6811F-ABD8-4B7C-A1C2-C30243133003}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7) Euler and Runge–Kutta methods", "7) Euler and Runge–Kutta methods\7) Euler and Runge–Kutta methods.csproj", "{DAC8DB68-BD7B-424A-A3DF-BAC2C8E4718F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8) Adams method", "8) Adams method\8) Adams method.csproj", "{10C31DCE-DCFB-4B9F-863E-E4615F6BE049}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{15E6811F-ABD8-4B7C-A1C2-C30243133003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15E6811F-ABD8-4B7C-A1C2-C30243133003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15E6811F-ABD8-4B7C-A1C2-C30243133003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC8DB68-BD7B-424A-A3DF-BAC2C8E4718F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC8DB68-BD7B-424A-A3DF-BAC2C8E4718F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC8DB68-BD7B-424A-A3DF-BAC2C8E4718F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC8DB68-BD7B-424A-A3DF-BAC2C8E4718F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C31DCE-DCFB-4B9F-863E-E4615F6BE049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C31DCE-DCFB-4B9F-863E-E4615F6BE049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C31DCE-DCFB-4B9F-863E-E4615F6BE049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C31DCE-DCFB-4B9F-863E-E4615F6BE049}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

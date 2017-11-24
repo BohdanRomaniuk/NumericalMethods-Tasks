@@ -1,0 +1,46 @@
+﻿<Window x:Class="_7__Euler_and_Runge_Kutta_methods.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_7__Euler_and_Runge_Kutta_methods"
+        mc:Ignorable="d"
+        Title="Чисельні методи №7" Height="358" Width="533">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="Вхідні дані" HorizontalAlignment="Left" VerticalAlignment="Top" Height="113" Width="335">
+            <Grid>
+                <Label x:Name="label" Content="y'=" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label x:Name="label1" Content="y(a)=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,28,0,0"/>
+                <Label x:Name="label2" Content="y*(точне)=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,59,0,0"/>
+                <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="([X]*[Y])/([X]*[X]-1)" VerticalAlignment="Top" Width="139" Margin="37,3,0,0"/>
+                <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="Sqrt(3*([X]*[X]-1))" VerticalAlignment="Top" Width="107" Margin="69,59,0,0"/>
+                <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="139" Margin="37,31,0,0"/>
+                <Label x:Name="label3" Content="a=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="181,0,0,0"/>
+                <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="110" Margin="202,4,0,0"/>
+                <Label x:Name="label4" Content="b=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="181,28,0,0"/>
+                <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="110" Margin="202,32,0,0"/>
+                <Label x:Name="label5" Content="h=" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="181,56,0,0"/>
+                <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0,1" VerticalAlignment="Top" Width="110" Margin="202,60,0,0"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Функції" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="340,0,0,0" Height="113" Width="178">
+            <Grid>
+                <Label x:Name="label6" Content="Метод:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0"/>
+                <Button x:Name="button" Content="Розвязати задачу Коші" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="10,61,0,0" Height="19" Click="button_Click"/>
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="10,31,0,0">
+                    <ComboBoxItem IsSelected="True">Ейлера</ComboBoxItem>
+                    <ComboBoxItem>Ренге-Кутта 4-го пор.</ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox2" Header="Розвязок" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,118,0,-0.2" Height="203" Width="518">
+            <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="183" VerticalAlignment="Top" Width="508" Margin="0,0,-2.4,-2.2">
+                <FlowDocument LineHeight="5">
+                    <Paragraph>
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </GroupBox>
+    </Grid>
+</Window>

@@ -170,7 +170,7 @@ namespace _6__Integrals_Computation
                     ++iterations;
                 }
                 result = sum * (b - a) / 2;
-
+                
                 //Порядок збіжності
                 h = result;
                 sum = 0;
