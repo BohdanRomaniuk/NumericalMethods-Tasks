@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using NCalc;
 
 namespace _7__Euler_and_Runge_Kutta_methods
@@ -58,14 +47,14 @@ namespace _7__Euler_and_Runge_Kutta_methods
                 txt.Text += String.Format("{0}\t{1}\t\t\t{2}\n", "xi", "yi", "yi(точне)");
                 double x = a;
                 uint quantity = 0;
-                do
+                while (x <= b)
                 {
                     ynext = yprev + h * calculateFunction(x, yprev);
                     x += h;
                     txt.Text += String.Format("{0}\t{1}\t{2}\n", x, ynext, calculateExact(x));
                     yprev = ynext;
                     ++quantity;
-                } while (x <= b);
+                }
                 txt.Text += String.Format("Кількість ітерацій: {0}\n", quantity);
                 txt.Text += String.Format("Точність(|y(b)-y*(b)|): {0}", Math.Abs(ynext - calculateExact(x)));
             }
@@ -76,25 +65,39 @@ namespace _7__Euler_and_Runge_Kutta_methods
                 double x = a;
                 uint quantity = 0;
                 double k1=0, k2=0, k3=0, k4=0;
-                do
+                while (x <= b)
                 {
-                    /*
+                    //4.1
+                    /* 
                     k1 = h * calculateFunction(x, yprev);
                     k2 = h * calculateFunction(x + h / 2, yprev + k1 / 2);
                     k3 = h * calculateFunction(x + h / 2, yprev + k2 / 2);
                     k4 = h * calculateFunction(x + h, yprev + k3);
                     ynext = yprev + (k1+2*k2+2*k3+k4)/6;
                     */
+
+                    //4.2
+
+                    k1 = h * calculateFunction(x, yprev);
+                    k2 = h * calculateFunction(x + h / 3, yprev + k1 / 3);
+                    k3 = h * calculateFunction(x + 2 * h / 3, yprev - k1 / 3 + k2);
+                    k4 = h * calculateFunction(x + h, yprev + k1 - k2 + k3);
+                    ynext = yprev + (k1+3*k2+3*k3+k4)/8;
+                    
+
+                    //4.3
+                    /*
                     k1 = h * calculateFunction(x, yprev);
                     k2 = h * calculateFunction(x + h / 4, yprev + k1 / 4);
                     k3 = h * calculateFunction(x + h / 2, yprev + k2 / 2);
                     k4 = h * calculateFunction(x + h, yprev + k1 - 2 * k2 + 2 * k3);
-                    ynext = yprev + (k1 + 4 * k3 + k4) / 6;
+                    ynext = yprev + (k1 + 4 * k3 + k4) / 6; 
+                    */
                     x += h;
                     txt.Text += String.Format("{0}\t{1}\t{2}\n", x, ynext, calculateExact(x));
                     yprev = ynext;
                     ++quantity;
-                } while (x <= b);
+                }
                 txt.Text += String.Format("Кількість ітерацій: {0}\n", quantity);
                 txt.Text += String.Format("Точність(|y(b)-y*(b)|): {0}", Math.Abs(ynext - calculateExact(x)));
             }
