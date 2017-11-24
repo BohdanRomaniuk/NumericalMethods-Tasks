@@ -58,7 +58,37 @@ namespace _7__Euler_and_Runge_Kutta_methods
                 txt.Text += String.Format("Кількість ітерацій: {0}\n", quantity);
                 txt.Text += String.Format("Точність(|y(b)-y*(b)|): {0}", Math.Abs(ynext - calculateExact(x)));
             }
-            else if(methodType==1)
+            else if (methodType == 1)
+            {
+                txt.Text += "Метод Рунге-Кутта 2-го порядку:\n";
+                txt.Text += String.Format("{0}\t{1}\t\t\t{2}\n", "xi", "yi", "yi(точне)");
+                double x = a;
+                uint quantity = 0;
+                double k1 = 0, k2 = 0;
+                while (x <= b)
+                {
+                    //2.1
+                    /* 
+                    k1 = h * calculateFunction(x, yprev);
+                    k2 = h * calculateFunction(x + h, yprev + k1);
+                    ynext = yprev + (k1+2)/2;
+                    */
+
+                    //2.2
+
+                    k1 = h * calculateFunction(x, yprev);
+                    k2 = h * calculateFunction(x + h / 2, yprev + k1 / 2);
+                    ynext = yprev + k2;
+                    
+                    x += h;
+                    txt.Text += String.Format("{0}\t{1}\t{2}\n", x, ynext, calculateExact(x));
+                    yprev = ynext;
+                    ++quantity;
+                }
+                txt.Text += String.Format("Кількість ітерацій: {0}\n", quantity);
+                txt.Text += String.Format("Точність(|y(b)-y*(b)|): {0}", Math.Abs(ynext - calculateExact(x)));
+            }
+            else if(methodType==2)
             {
                 txt.Text += "Метод Рунге-Кутта 4-го порядку:\n";
                 txt.Text += String.Format("{0}\t{1}\t\t\t{2}\n", "xi", "yi", "yi(точне)");

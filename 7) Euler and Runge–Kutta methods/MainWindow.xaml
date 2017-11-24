@@ -29,6 +29,7 @@
                 <Button x:Name="button" Content="Розвязати задачу Коші" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="10,61,0,0" Height="19" Click="button_Click"/>
                 <ComboBox x:Name="comboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="146" Margin="10,31,0,0">
                     <ComboBoxItem IsSelected="True">Ейлера</ComboBoxItem>
+                    <ComboBoxItem>Рунге-Кутта 2-го пор.</ComboBoxItem>
                     <ComboBoxItem>Рунге-Кутта 4-го пор.</ComboBoxItem>
                 </ComboBox>
             </Grid>
