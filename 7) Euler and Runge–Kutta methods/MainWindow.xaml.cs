@@ -67,14 +67,14 @@ namespace _7__Euler_and_Runge_Kutta_methods
                 double k1 = 0, k2 = 0;
                 while (x <= b)
                 {
-                    //2.1
+                    //2.2
                     /* 
                     k1 = h * calculateFunction(x, yprev);
                     k2 = h * calculateFunction(x + h, yprev + k1);
                     ynext = yprev + (k1+2)/2;
                     */
 
-                    //2.2
+                    //2.1
 
                     k1 = h * calculateFunction(x, yprev);
                     k2 = h * calculateFunction(x + h / 2, yprev + k1 / 2);
