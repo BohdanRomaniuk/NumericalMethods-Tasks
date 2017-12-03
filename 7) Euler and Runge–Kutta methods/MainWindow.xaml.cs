@@ -113,7 +113,7 @@ namespace _7__Euler_and_Runge_Kutta_methods
                     k3 = h * calculateFunction(x + 2 * h / 3, yprev - k1 / 3 + k2);
                     k4 = h * calculateFunction(x + h, yprev + k1 - k2 + k3);
                     ynext = yprev + (k1+3*k2+3*k3+k4)/8;
-                    
+
 
                     //4.3
                     /*
@@ -123,6 +123,25 @@ namespace _7__Euler_and_Runge_Kutta_methods
                     k4 = h * calculateFunction(x + h, yprev + k1 - 2 * k2 + 2 * k3);
                     ynext = yprev + (k1 + 4 * k3 + k4) / 6; 
                     */
+
+                    //3.1
+                    //k1 = h * calculateFunction(x, yprev);
+                    //k2 = h * calculateFunction(x + h / 2, yprev + h / 2);
+                    //k3 = h * calculateFunction(x + h, yprev - k1 + 2*k2);
+                    //ynext = yprev + (k1 + 4 * k2 + k3) / 6;
+
+                    //3.2
+                    //k1 = h * calculateFunction(x, yprev);
+                    //k2 = h * calculateFunction(x + h / 3, yprev + k1 / 3);
+                    //k3 = h * calculateFunction(x + 2 * h / 3, yprev + 2 * k2 / 3);
+                    //ynext = yprev + (k1 + 3 * k3) / 4;
+
+                    //3.3
+                    //k1 = h * calculateFunction(x, yprev);
+                    //k2 = h * calculateFunction(x + h / 2, yprev + k1 / 2);
+                    //k3 = h * calculateFunction(x + 3 * h / 4, yprev + 3 * k2 / 4);
+                    //ynext = yprev + (2 * k1 + 3 * k2 + 4 * k3) / 9;
+                    //ynext = yprev + h * calculateFunction(x, yprev);
                     x += h;
                     txt.Text += String.Format("{0}\t{1}\t{2}\n", x, ynext, calculateExact(x));
                     yprev = ynext;

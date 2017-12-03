@@ -59,45 +59,30 @@ namespace _8__Adams_method
             uint quantity = 0;
             double k1 = 0, k2 = 0, k3 = 0, k4 = 0;
             int steps = Convert.ToInt32(textBox6.Text);
-            double yadamsnext=0, yadamsprev = 0;
+            double yadamsnext = 0, yadamsprev = 0;
+
             while (x <= b)
             {
-                //4.1
-                /* 
-                k1 = h * calculateFunction(x, yprev);
-                k2 = h * calculateFunction(x + h / 2, yprev + k1 / 2);
-                k3 = h * calculateFunction(x + h / 2, yprev + k2 / 2);
-                k4 = h * calculateFunction(x + h, yprev + k3);
-                ynext = yprev + (k1+2*k2+2*k3+k4)/6;
-                */
-
-                //4.2
-
                 k1 = h * calculateFunction(x, yprev);
                 k2 = h * calculateFunction(x + h / 3, yprev + k1 / 3);
                 k3 = h * calculateFunction(x + 2 * h / 3, yprev - k1 / 3 + k2);
                 k4 = h * calculateFunction(x + h, yprev + k1 - k2 + k3);
                 ynext = yprev + (k1 + 3 * k2 + 3 * k3 + k4) / 8;
-
-
-                //4.3
-                /*
-                k1 = h * calculateFunction(x, yprev);
-                k2 = h * calculateFunction(x + h / 4, yprev + k1 / 4);
-                k3 = h * calculateFunction(x + h / 2, yprev + k2 / 2);
-                k4 = h * calculateFunction(x + h, yprev + k1 - 2 * k2 + 2 * k3);
-                ynext = yprev + (k1 + 4 * k3 + k4) / 6; 
-                */
+                
                 yadamsprev = ynext;
-                yadamsnext = 0;
-                for(int i=0; i<steps; ++i)
+                
+                for (int i = 0; i < steps; ++i)
                 {
-                    yadamsnext = yprev + (h / 2) * (calculateFunction(x+h, yadamsprev) + calculateFunction(x, yprev));
+                    yadamsnext = yprev + (h / 2) * (calculateFunction(x + h, yadamsprev) + calculateFunction(x, yprev));
+                    yadamsprev = yadamsnext;
+                    
                     ++quantity;
                 }
+
                 x += h;
                 txt.Text += String.Format("{0}\t{1}\t{2}\t{3}\n", x, ynext, yadamsnext, calculateExact(x));
                 yprev = ynext;
+                //yprev = yadamsnext;
                 ++quantity;
             }
             txt.Text += String.Format("Кількість ітерацій: {0}\n", quantity);
