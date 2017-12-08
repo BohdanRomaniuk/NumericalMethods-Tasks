@@ -1,0 +1,179 @@
+[33mcommit 7eded5f5bd2f0659350b4c72e88584b3d6fe44d2[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Dec 8 21:01:22 2017 +0200
+
+    Add all explicit Adams method formulas for all ranks
+
+[33mcommit 3559fda8ca31d206af0a1ec4f3e921a58736b4b7[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sun Dec 3 17:42:38 2017 +0200
+
+    Fucking Adams
+
+[33mcommit 9d6d0304adb6cd7e3d4b29943775f553ce2176bd[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Dec 1 22:53:42 2017 +0200
+
+    Update Adams Method
+
+[33mcommit 414151066842efbea37d63037bacc5d748ad8f3b[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Nov 24 20:50:08 2017 +0200
+
+    Add 2-d Runge-Kuttа method
+
+[33mcommit f0f4a104db1feca44d73f2c3cfc2b1231aee22d0[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Nov 24 20:39:41 2017 +0200
+
+    Add some Runge-Kutta formulas
+
+[33mcommit b5385e3b6b6bcf3f9515eebcf335ec2eaba3a5c8[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Nov 24 20:27:24 2017 +0200
+
+    Finish Euler and Runge-Kutta methods
+
+[33mcommit 50b6eca9af1776e87b5afb40b0dbfbe6fa31d1b0[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sun Nov 19 22:29:13 2017 +0200
+
+    Додав порядок збіжності
+
+[33mcommit c8e860ae3b6cdba9f27f88008453593f3467fcb9[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sun Nov 19 20:54:17 2017 +0200
+
+    Finish Integral Computation Project
+
+[33mcommit c63edd9084b34d59ca23ba52cb49ecb34c7f73b2[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sat Nov 18 17:24:32 2017 +0200
+
+    Add rectangles, trapeze and parabola methods
+
+[33mcommit 2aef5421ac44966b7a9e64dd417f1ca10aeadc54[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sat Nov 18 14:49:01 2017 +0200
+
+    Add GUI for Integrals Compotation Project
+
+[33mcommit 3601a10a9c895afcf47fbea2e2fe144b0d8c5b64[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Mon Nov 6 00:32:45 2017 +0200
+
+    Add Backward Newton Project
+
+[33mcommit e31b3f5b62ab0183505e68eaa62ca6ed98deb4b9[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sun Oct 29 19:05:29 2017 +0400
+
+    Update Backward Newton
+
+[33mcommit 401e3d4ee4b9ed99cfc572ab8422e57fbd1f7ba5[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sun Oct 29 13:19:06 2017 +0400
+
+    Update Simple Iteration for SNLE and Add Backward Newton project
+
+[33mcommit 0465ea2dabb302a6d744c38db956415a8b0ac3ee[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sun Oct 22 21:43:37 2017 +0300
+
+    Add Graphic in Lagrange Polynomial Project
+
+[33mcommit 0cf0ca82927552a00e2a2afa9994baee043f83dd[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sat Oct 21 23:50:15 2017 +0300
+
+    Add Lagrange Polynomial Project
+
+[33mcommit 33f18a1bff6ca064be4aa98688e95ea0406f6cda[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sat Oct 21 19:53:29 2017 +0300
+
+    Add graphic rof precision in Newton Project
+
+[33mcommit 6ba27497375ddfce8208c58b1e1e965cc0f6f72b[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sat Oct 21 18:20:34 2017 +0300
+
+    Add implementation of Newton and Modified Newton Algorithms
+
+[33mcommit 7398225aa3be140d4d7ec8f700c9adda487f87ec[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sat Oct 21 16:55:29 2017 +0300
+
+    Stypid mistake
+
+[33mcommit e0bab3b0b1f1910288752e527c9e3d9f06f6fd1a[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sat Oct 21 16:53:32 2017 +0300
+
+    Add not working Newton algorithm
+
+[33mcommit d8c33962a813f5faa240a2973eb956bc433c8b77[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Sun Oct 1 17:45:03 2017 +0300
+
+    Add simple iteration algorithm for SNLE
+
+[33mcommit 4a998e6bad2424485d84c977f14908c74569e9af[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Sep 29 22:11:39 2017 +0300
+
+    Add desing for 3 project Simple Iteration and Newton angorithms for SLNE using WPF
+
+[33mcommit 955d379c4b366c3ca266d9385016e2a8a3674611[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Sep 22 23:39:56 2017 +0300
+
+    Some fixes
+
+[33mcommit a7dbdf88a34276e51c63b1c6aca31c0e5559dafe[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Sep 22 23:37:16 2017 +0300
+
+    Add getRound() method to rounde the result from epsilon
+
+[33mcommit f5fcf36d919345dd9681bac83d21681d375bcf03[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Sep 22 23:30:07 2017 +0300
+
+    Add function using NCalc for converting string to math expression
+
+[33mcommit e0abeec6cb85c8a7972ae50ab344d74fb1f12f82[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Sep 22 22:39:44 2017 +0300
+
+    Update Phi and PhiShtrih funstion
+
+[33mcommit 708d97dfd766a28f10e5006d3871e97861911b09[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Fri Sep 22 22:25:39 2017 +0300
+
+    First upload of Simple Iteration algorigth for linear equation
+
+[33mcommit 2762089e34b7be7574e11534d0a57aff447bf8a9[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Tue Sep 19 19:55:05 2017 +0300
+
+    Some fixes to minimize code
+
+[33mcommit 38de96057c63afc7173aa7c59ad04bf8dd9eff3c[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Tue Sep 19 19:51:42 2017 +0300
+
+    Uploading Simple iteration and Seidel algorithms due to the private repository
+
+[33mcommit f46e95135bbbd22b741b57de308b7438b61a35d9[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Mon Sep 18 22:34:22 2017 +0300
+
+    Create first two project
+
+[33mcommit 6c452ed837b3f019bee2c96252314cf8790fd94c[m
+Author: BohdanRomaniuk <bohdan2307@gmail.com>
+Date:   Mon Sep 18 22:25:59 2017 +0300
+
+    first commit
