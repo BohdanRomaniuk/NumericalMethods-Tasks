@@ -311,7 +311,7 @@ namespace _8__Adams_method
                             double yadamsnext = 0;
                             for (int j = 0; j < steps1; ++j)
                             {
-                                yadamsnext = vals[i - 1] + (h / 720) * (25 * calculateFunction(x + h, yadamsprev) + 646 * calculateFunction(x, vals[i - 1]) - 264 * calculateFunction(x - h, vals[i - 2]) + 106*calculateFunction(x - 2 * h, vals[i - 3])-19*calculateFunction(x-3*h, vals[i-4]));
+                                yadamsnext = vals[i - 1] + (h / 720) * (251 * calculateFunction(x + h, yadamsprev) + 646 * calculateFunction(x, vals[i - 1]) - 264 * calculateFunction(x - h, vals[i - 2]) + 106*calculateFunction(x - 2 * h, vals[i - 3])-19*calculateFunction(x-3*h, vals[i-4]));
                                 yadamsprev = yadamsnext;
                                 ++quantity;
                             }
@@ -327,7 +327,7 @@ namespace _8__Adams_method
             txt.Text += String.Format("Точність(|y(b)-y*(b)|): {0}", Math.Abs(vals[steps] - calculateExact(x)));
         }
 
-        private void implicitMethod1(uint rank)
+        private void implicitMethodMy(uint rank)
         {
             TextRange txt = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
             txt.Text = "";
